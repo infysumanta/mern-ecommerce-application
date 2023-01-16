@@ -1,2 +1,3 @@
-# mern-ecommerce-application
-MERN Ecommerce Application 
+# MERN Ecommerce Application
+
+MERN Ecommerce Application
