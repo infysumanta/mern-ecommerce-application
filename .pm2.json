@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "ECOM_Store_Application",
+            "script": "npm",
+            "args": "start"
+        }
+    ]
+}
