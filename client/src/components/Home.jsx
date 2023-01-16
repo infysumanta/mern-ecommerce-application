@@ -1,10 +1,20 @@
 import React from "react";
 import { useGetAllProductsQuery } from "../features/productsApi";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../features/cartSlice";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
   // const { items: data, status } = useSelector((state) => state.products);
   const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    history.push("/cart");
+  };
+
   return (
     <div className="home-container">
       {isLoading ? (
@@ -22,7 +32,9 @@ const Home = () => {
                 <div className="details">
                   <span className="price">₹{product.price}.00</span>
                 </div>
-                <button>Add To Cart</button>
+                <button onClick={() => handleAddToCart(product)}>
+                  Add To Cart
+                </button>
               </div>
             ))}
           </div>
