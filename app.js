@@ -12,4 +12,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to out Oneline shop API");
 });
 
+app.use("/api", require("./routes/routes"));
+
 module.exports = app;
