@@ -14,4 +14,7 @@ app.get("/", (req, res) => {
 
 app.use("/api", require("./routes/routes"));
 
+app.get("/products", (req, res) => {
+  res.send(require("./dummyData"));
+});
 module.exports = app;
