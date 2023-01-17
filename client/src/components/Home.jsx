@@ -2,17 +2,21 @@ import React from "react";
 import { useGetAllProductsQuery } from "../features/productsApi";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cartSlice";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   // const { items: data, status } = useSelector((state) => state.products);
   const { data, error, isLoading } = useGetAllProductsQuery();
+  const auth = useSelector((state) => state.auth);
+
+  console.log(auth);
+
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    history.push("/cart");
+    navigate("/cart");
   };
 
   return (

@@ -18,7 +18,7 @@ exports.register = async (req, res) => {
     return res.status(400).send("User already exists with this email address");
   }
 
-  const salt = await bcrypt.getSalt(10);
+  const salt = await bcrypt.genSalt(10);
 
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
