@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import { NotFound } from "./components/NotFound";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import CheckOutSuccess from "./components/CheckOutSuccess";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/checkout-success" element={<CheckOutSuccess />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
