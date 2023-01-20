@@ -6,13 +6,13 @@ const router = express.Router();
 
 router
   .route("/")
-  .post(upload("image"), productController.createProduct)
+  .post(upload.single("image"), productController.createProduct)
   .get(productController.getAllProducts);
 
 router
   .route("/:id")
   .get(productController.getSingleProduct)
-  .put(upload("image"), productController.updateProduct)
+  .put(upload.single("image"), productController.updateProduct)
   .delete(productController.deleteProduct);
 
 module.exports = router;

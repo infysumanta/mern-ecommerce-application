@@ -1,5 +1,5 @@
 const multer = require("multer");
-const uuidv4 = require("uuid/v4");
+const { v4: uuidv4 } = require("uuid");
 
 /* Creating a storage object that will be used by multer to store the file. */
 const storage = multer.diskStorage({
