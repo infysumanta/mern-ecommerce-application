@@ -34,6 +34,7 @@ exports.register = async (req, res) => {
     token: await genAuthToken(user),
     name: user.name,
     email: user.email,
+    isAdmin: user.isAdmin,
     id: user.id,
   });
 };
@@ -59,6 +60,7 @@ exports.login = async (req, res) => {
     token: await genAuthToken(user),
     name: user.name,
     email: user.email,
+    isAdmin: user.isAdmin,
     id: user.id,
   });
 };
