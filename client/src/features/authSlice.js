@@ -11,6 +11,7 @@ const initialState = {
   loginStatus: "",
   loginError: "",
   userLoaded: false,
+  isAdmin: false,
 };
 
 export const registerUser = createAsyncThunk(
@@ -63,6 +64,7 @@ const authSlice = createSlice({
           token: token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           userLoaded: true,
         };
@@ -97,6 +99,7 @@ const authSlice = createSlice({
           token: action.payload.token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           registerStatus: "success",
         };
@@ -122,6 +125,7 @@ const authSlice = createSlice({
           token: action.payload.token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           loginStatus: "success",
         };
